@@ -1,92 +1,111 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>jQuery bootstrap 表单验证插件</title>
-</head>
-<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<body>
-<div class="container-fluid">
-  <form id="form" style=" margin-top:40px;">
-    <div class="row">
-      <div class="col-sm-12">
-	     
-        <div class="form-group">
-          <label class="control-label" >手机号码验证</label>
-          <input type="text" class="form-control"  validation="mobile" isEmpty="true" message="请填写有效的手机号码">
-        
+	<head>
+		<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="基于bootstrap表单验证|响应式表单验证|Jquery表单验证|jQuery表单验证插件|bootstrap表单验证插件" />
+	    <meta name="keywords" content="jQuery|bootstrap|响应式|表单|表单验证|jQuery表单验证插件|bootstrap表单验证插件" />
+		<title>jQuery bootstrap 表单验证插件</title>
+	</head>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+	<body>
+		<div class="container-fluid">
+			<form id="form" style=" margin-top:40px;">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label class="control-label">
+								手机号码验证
+							</label>
+							<input type="text" class="form-control" validation="mobile" isEmpty="true"
+							message="请填写有效的手机号码">
+						</div>
+						<div class="form-group">
+							<label class="control-label">
+								邮箱验证
+							</label>
+							<input type="text" class="form-control" validation="email">
+						</div>
+						<div class="form-group">
+							<label class="control-label">
+								密码验证
+							</label>
+							<input type="text" class="form-control" validation="password" message="密码要求为：6-20 位，字母、数字、字符">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-info btn-block" id="btnSubmit1">
+							提 交
+						</button>
+					</div>
+				</div>
+			</form>
+			<hr />
+			<form class="form-horizontal">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3">
+								第二种方式验证手机号码
+							</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" validation="^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1}))+\d{8})$">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3">
+								第二种方式验证邮箱
+							</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" validation="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<button type="submit" class="btn btn-success btn-block" id="btnSubmit2">
+							提 交
+						</button>
+					</div>
+				</div>
+			</form>
 		</div>
-		
-        <div class="form-group">
-          <label class="control-label">邮箱验证</label>
-          <input type="text" class="form-control"  validation="email" >
-        
-		 </div>
-          <div class="form-group">
-          <label class="control-label">密码验证</label>
-          <input type="text" class="form-control"  validation="password"  message="密码要求为：6-20 位，字母、数字、字符">
-        
-		 </div>
-		</div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <button type="submit" class="btn btn-info btn-block" id="btnSubmit1">提 交</button>
-      </div>
-    </div>
-  </form>
-  <hr />
-  <form class="form-horizontal">
-    <div class="row">
-      <div class="col-sm-12">
-	   
-        <div class="form-group">
-          <label class="control-label col-sm-3" >第二种方式验证手机号码</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" validation="^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1}))+\d{8})$" >
-		</div>
-        </div>
-		
-        <div class="form-group">
-          <label class="control-label col-sm-3">第二种方式验证邮箱</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" validation="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$" >
-        
-		 </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-    <div class="col-sm-12">
-      <button type="submit" class="btn btn-success btn-block" id="btnSubmit2">提 交</button>
-        </div></div>
-  </form>
-</div>
-</body>
-<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.validation.min.js"></script>
-<script>
-$(function(){
-    $("#btnSubmit1").click(function() {
-        $("#form").validation({successStyle:true,callback:function(success,form){
-          if (success) {
-			alert('验证成功');
-		  } 
-        }});
-        return false;
-    });
-    $("#btnSubmit2").click(function() {
-       $(".form-horizontal").validation({tipTimeout:2,callback:function(success,form){
-           if (success) {
-			alert('验证成功');
-		  } 
-        }});
-        return false;
-    });
-})
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js">
+	</script>
+	<script src="js/bootstrap.validation.min.js">
+	</script>
+	<script>
+		$(function() {
+			$("#btnSubmit1").click(function() {
+				$("#form").validation({
+					successStyle: true,
+					callback: function(success, form) {
+						if (success) {
+							alert('验证成功');
+						}
+					}
+				});
+				return false;
+			});
+			$("#btnSubmit2").click(function() {
+				$(".form-horizontal").validation({
+					tipTimeout: 2,
+					callback: function(success, form) {
+						if (success) {
+							alert('验证成功');
+						}
+					}
+				});
+				return false;
+			});
+		})
+	</script>
 
-	
-</script>
 </html>

@@ -1,0 +1,1 @@
+# bootstrap.validation.min.js

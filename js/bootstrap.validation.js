@@ -42,7 +42,7 @@
 		number: /^[1-9]*[1-9][0-9]*$/,
 		license: /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/,
 		phone: /^(0[0-9]{2,3}\-)?([2-9][0-9]{6,7})+(\-[0-9]{1,4})?$/
-	}
+	};
 
 	$.fn.validation = function(options, methods) {
 		var defales = {
@@ -51,7 +51,7 @@
 			warning: true,
 			tipTimeout: 0,
 			callback: $.fun
-		}
+		};
 		var _option = $.extend(defales, options);
 		var $this = $(this);
 		var $inputs = $this.find('input[validation]');
@@ -107,7 +107,6 @@
 				_success = validation(_inputThis, _option);
 			}
 		} else {
-
 			if (_inputValue) {
 				_success = validation(_inputThis, _option);
 			} else {
@@ -139,7 +138,8 @@
 	function createSuccess(t) {
 		var _html = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
 		var _style = 'has-success has-feedback';
-		var _parentDvis = t.parents('div') _parentDvis.each(function() {
+		var _parentDvis = t.parents('div');
+        _parentDvis.each(function() {
 			var _css = $(this).attr('class');
 			if (_css && _css.indexOf('form-group') >= 0) {
 				$(this).addClass(_style);
@@ -151,7 +151,8 @@
 	function createError(t, opt) {
 		var _html = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
 		var _style = 'has-error has-feedback';
-		var _parentDvis = t.parents('div') _parentDvis.each(function() {
+		var _parentDvis = t.parents('div');
+        _parentDvis.each(function() {
 			var $this = $(this);
 			var _css = $this.attr('class');
 			if (_css && _css.indexOf('form-group') >= 0) {
@@ -176,7 +177,8 @@
 		});
 
 		var _style = 'has-error has-feedback';
-		var _parentDvis = _inputThis.parents('div') _parentDvis.each(function() {
+		var _parentDvis = _inputThis.parents('div');
+        _parentDvis.each(function() {
 			var $this = $(this);
 			var _css = $this.attr('class');
 			if (_css && _css.indexOf('form-group') >= 0) {
@@ -196,11 +198,13 @@
 		var _width = _inputThis.width() / 2;
 		var _height = _inputThis.height();
 		var $inputParentThis = _inputThis.parent('div');
-		var _inputParent = $inputParentThis.attr('class') if (_inputParent && _inputParent.indexOf('col-') >= 0) {
+		var _inputParent = $inputParentThis.attr('class');
+        if (_inputParent && _inputParent.indexOf('col-') >= 0) {
 			_height = $inputParentThis.height();
 		}
 
-		var _id = 'tooltip' + Math.floor(Math.random() * 10000 + 1) var _message = _inputThis.attr('message') || '请填写有效数据';
+		var _id = 'tooltip' + Math.floor(Math.random() * 10000 + 1);
+        var _message = _inputThis.attr('message') || '请填写有效数据';
 		var _html = '<div class="tooltip fade top in" role="tooltip" id="' + _id + '" style="width: ' + _width + '; top: -' + _height + 'px; left: ' + _width + 'px; display: block;">';
 		_html += '<div class="tooltip-arrow" style="left: 50%;"></div>';
 		_html += '<div class="tooltip-inner">' + _message + '</div></div>';
@@ -230,7 +234,7 @@
 				removeErrorStyle(_inputThis);
 			},
 			blur: function() {
-				validation(_inputThis, _option);
+				channle(_inputThis, _option);
 			}
 		});
 	}
